@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import { BaseIcon } from "magma-design-system-test";
 
-const props = defineProps({
-  logo: {
-    type: String,
-    default: null
-  },
-  name: {
-    type: String,
-    default: "Acme Inc."
-  }
-});
+interface Props {
+  logo: string | null;
+  name: string | null;
+}
+
+const props = defineProps<Props>();
 </script>
 
 <template>
-  <div class="bg-background-subtle w-full h-72 rounded-2xl pt-10 pl-36">
+  <div
+    class="hidden xl:block bg-background-subtle w-full h-72 rounded-2xl pt-10 pl-4 xl:pl-36 max-w-full"
+  >
     <div class="rounded-tl-lg overflow-hidden h-full flex">
       <div class="w-1/2 h-full bg-background-emphasis pt-8 px-6">
         <div class="flex items-center gap-2 mb-12">
@@ -26,10 +24,12 @@ const props = defineProps({
               v-else
               :src="props.logo"
               alt="Organization logo"
-              class="w-8 h-8 rounded-full"
+              class="w-8 h-8 rounded-full shrink-0"
             />
           </div>
-          <span class="text-white mgm-txt-sm">{{ props.name }}</span>
+          <span class="text-white mgm-txt-sm truncate flex-1">{{
+            props.name || "Acme Inc."
+          }}</span>
         </div>
         <div>
           <div class="flex gap-2 mb-6">

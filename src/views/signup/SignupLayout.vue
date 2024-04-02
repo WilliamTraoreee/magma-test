@@ -6,7 +6,7 @@ import SignupSidebar from "@/components/shell/SignupSidebar.vue";
 <template>
   <div :class="[{ flex: true }]">
     <SignupSidebar />
-    <div class="flex-1">
+    <div class="flex-1 relative">
       <router-view />
     </div>
   </div>
