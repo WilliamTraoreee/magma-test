@@ -11,6 +11,7 @@ import OrganizationPreview from "../../components/OrganizationPreview.vue";
 import { computed, reactive } from "vue";
 import { maxLength, minLength, required, url } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
+import router from "@/router";
 
 const state = reactive({
   organization: "",
@@ -49,26 +50,27 @@ const handleSubmit = async () => {
 
   const formData = new FormData();
   formData.append(
-    "organization",
+    "organizationData",
     JSON.stringify({
       name: state.organization,
       website: state.website
     })
   );
-  state.logo && formData.append("logo", state.logo);
+  //state.logo && formData.append("logo", state.logo);
 
   const response = await fetch(
     `${import.meta.env.VITE_API_URL}/api/test/organization`,
     {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
-      body: JSON.stringify(formData)
+      body: formData
     }
   );
 
-  console.log(response);
+  if (response.ok) {
+    router.push("/sign-up/ambassadors");
+  } else {
+    console.error("Error submitting organization data");
+  }
 };
 </script>
 
