@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@ark-ui/vue": "^0.11.0",
     "@headlessui/vue": "1.7.17",
     "@tailwindcss/line-clamp": "0.4.4",
     "@tailwindcss/typography": "0.5.10",

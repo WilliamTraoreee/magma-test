@@ -12,6 +12,7 @@ import { computed, reactive } from "vue";
 import { maxLength, minLength, required, url } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 import router from "@/router";
+import ProgressBar from "@/components/shell/ProgressBar.vue";
 
 const state = reactive({
   organization: "",
@@ -67,6 +68,8 @@ const handleSubmit = async () => {
   );
 
   if (response.ok) {
+    const data = await response.json();
+    window.localStorage.setItem("organizationId", data.id);
     router.push("/sign-up/ambassadors");
   } else {
     console.error("Error submitting organization data");
@@ -111,17 +114,21 @@ const handleSubmit = async () => {
       />
     </form>
     <OrganizationPreview :name="state.organization" :logo="logoPreview" />
+
     <div
-      class="absolute bottom-0 left-0 w-full p-10 flex justify-end border-t border-background-brand-default"
+      class="absolute bottom-0 left-0 w-full h-20 flex justify-end border-t border-background-brand-default px-10 items-center"
     >
-      <BaseButton
-        :disabled="validation.$error || !validation.$dirty"
-        :text="$t('generic.continue')"
-        size="lg"
-        class="bg-background-brand-emphasis"
-        icon="arrow-right"
-        @click="handleSubmit"
-      />
+      <ProgressBar class="absolute top-0 left-0 w-full" />
+      <div class="flex w-full justify-end">
+        <BaseButton
+          :disabled="validation.$error || !validation.$dirty"
+          :text="$t('generic.continue')"
+          size="lg"
+          class="bg-background-brand-emphasis"
+          icon="arrow-right"
+          @click="handleSubmit"
+        />
+      </div>
     </div>
   </div>
 </template>
