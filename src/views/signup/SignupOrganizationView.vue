@@ -57,7 +57,7 @@ const handleSubmit = async () => {
       website: state.website
     })
   );
-  //state.logo && formData.append("logo", state.logo);
+  state.logo && formData.append("logo", state.logo);
 
   const response = await fetch(
     `${import.meta.env.VITE_API_URL}/api/test/organization`,
