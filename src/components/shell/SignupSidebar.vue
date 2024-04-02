@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 // Components
 import { BaseIcon } from "magma-design-system-test";
 
@@ -10,7 +9,7 @@ const { signupSteps } = useSignupRouting();
 
 <template>
   <nav
-    class="relative hidden min-h-screen max-w-[496px] bg-background-subtle py-10 px-20 md:block"
+    class="relative hidden min-h-screen max-w-[496px] bg-background-subtle py-10 px-20 md:block shrink-0"
   >
     <img
       class="mb-20"
@@ -21,11 +20,23 @@ const { signupSteps } = useSignupRouting();
     />
 
     <h1 class="mb-2 text-mgm-txt-xl font-medium text-foreground-emphasis">
-      {{ $t(`${signupSteps.find((step) => step.status === "current")?.name}.heading`) }}
+      {{
+        $t(
+          `${
+            signupSteps.find((step) => step.status === "current")?.name
+          }.heading`
+        )
+      }}
     </h1>
 
     <p class="mb-6 text-mgm-txt-sm font-normal text-foreground-default">
-      {{ $t(`${signupSteps.find((step) => step.status === "current")?.name}.description`) }}
+      {{
+        $t(
+          `${
+            signupSteps.find((step) => step.status === "current")?.name
+          }.description`
+        )
+      }}
     </p>
 
     <ol class="hide-nav pb-40">

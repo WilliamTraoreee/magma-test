@@ -2,14 +2,13 @@
 // NPM
 
 // Components
-import {
-  BaseIcon,
-  FieldAvatarUploader,
-  FieldInput
-} from "magma-design-system-test";
-
+// import {
+//   BaseIcon,
+//   FieldAvatarUploader,
+//   FieldInput
+// } from "magma-design-system-test";
 </script>
 
 <template>
-  <div></div>
+  <div class="w-[200px] h-[500px] bg-red-500">test</div>
 </template>

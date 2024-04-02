@@ -27,7 +27,7 @@ defineProps({
         <RouterLink
           class="inline-flex h-12 w-12"
           :to="{
-            name: 'campaigns'
+            name: 'signup-organization'
           }"
         >
           <BaseAvatar src="/img/logo_magma.png" shape="squared" size="lg" />
@@ -66,7 +66,7 @@ defineProps({
             <RouterLink
               class="text-base font-medium text-foreground-brand-default hover:text-border-default"
               :to="{
-                name: 'campaigns'
+                name: 'signup-organization'
               }"
             >
               {{ $t("errorView.home") }}<span aria-hidden="true"> &rarr;</span>
