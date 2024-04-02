@@ -228,7 +228,7 @@
         "heading": "✨ Bienvenue sur Magma",
         "description": "Personnalisez l’expérience de vos ambassadeurs et candidats en créant votre organisation."
       },
-      "itemThree": {  
+      "itemThree": {
         "title": "Définissez votre cible",
         "heading": "🥳 Félicitations, votre organisation est prête ",
         "description": "Définissez maintenant votre cible prioritaire."
@@ -276,7 +276,11 @@
   },
   "signupOrganizationView": {
     "form": {
-      "organization": "Nom de votre organisation"
+      "organization": "Nom de votre organisation",
+      "logo": {
+        "cta": "Téléchargez une image",
+        "description": "Fichiers *.png et *.jpg de maximum 5MB. Taille minimum recommandée de 200x200px."
+      }
     },
     "heading": "Créez votre organisation"
   },

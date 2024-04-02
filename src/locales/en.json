@@ -228,7 +228,7 @@
         "heading": "✨ Welcome to Magma",
         "description": "Personalize the experience of your ambassadors and candidates by creating your own organisation.."
       },
-      "itemThree": {  
+      "itemThree": {
         "title": "Define your target",
         "heading": "🥳 Congratulations, your organisation is ready",
         "description": "Now define your priority target."
@@ -276,7 +276,11 @@
   },
   "signupOrganizationView": {
     "form": {
-      "organization": "Name of your organization"
+      "organization": "Name of your organization",
+      "logo": {
+        "cta": "Upload a picture",
+        "description": "*.png and *.jpg files of maximum 5MB. Recommended minimum size of 200x200px."
+      }
     },
     "heading": "Create your organization"
   },
